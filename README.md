@@ -12,12 +12,12 @@ covering postgre structural query language syllabus.
 
 To get a local copy up and running follow these setup steps.
 
-## **Setup**
+**Setup**
 
 - Open terminal and clone the project: `git clone https://github.com/ismailakinkunmi/database-project.git`
 - cd into the directory `database-project`
 
-## **Prerequisites**
+**Prerequisites**
 
 - Atleast you need to download `postgreSQL` and installed in your system
 
