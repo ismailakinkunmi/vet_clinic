@@ -6,3 +6,9 @@ SELECT (name,escape_attempts) FROM animals WHERE weight_kg > 10.5;
 SELECT * FROM animals WHERE neutered is true;
 SELECT name FROM animals WHERE name !='Gabumon';
  SELECT * FROM animals WHERE weight_kg BETWEEN 10.4 AND 17.3 OR weight_kg = 10.4 OR weight_kg = 17.3;
+
+  -- update the animals table by setting the species column to unspecified. Verify that change was made. Then roll back the change
+  begin transaction;
+  insert into animals(species)values('unspecified');
+  rollback;
+  
