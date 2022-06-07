@@ -9,6 +9,8 @@ SELECT name FROM animals WHERE name !='Gabumon';
 
   -- update the animals table by setting the species column to unspecified. Verify that change was made. Then roll back the change
   begin transaction;
-  insert into animals(species)values('unspecified');
+  update animals set species = 'unspecified';
   rollback;
-  
+
+  -- Update the animals table by setting the species column to digimon for all animals that have a name ending in mon
+
