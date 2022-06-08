@@ -12,3 +12,11 @@ insert into animals(name,date_of_birth,escape_attempts,neutered,weight_kg) value
 insert into animals(name,date_of_birth,escape_attempts,neutered,weight_kg) values('Boarmon','2005-6-07',7,true,20.4);
 insert into animals(name,date_of_birth,escape_attempts,neutered,weight_kg) values('Blossom','1998-10-13',3,true,17);
 insert into animals(name,date_of_birth,escape_attempts,neutered,weight_kg) values('Ditto','2022-5-14',4,true,22);
+
+----------------------- insert data into the owners table
+insert into owners(full_name, age) values('Sam Smith',34),('Jennifer Orwell',19),('Bob',45),('Melody Pond',77),('Dean Winchester',14),('Jodie Whittaker',38);
+
+----------------insert data into the species table
+
+insert into species(name) values('Pokemon'),('Digimon');
+
