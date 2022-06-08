@@ -56,20 +56,3 @@ select name from animals where escape_attempts = (select max(escape_attempts) fr
 
  ----What is the average number of escape attempts per animal type of those born between 1990 and 2000?
 select species, avg(escape_attempts) from animals where extract(year from date_of_birth) between 1990 and 2000 group by species;
-
-
-----------------Modify your inserted animals so it includes the species_id value:-------------
-
-----If the name ends in "mon" it will be Digimon
- update animals set speciesId = 2 where name like'%mon';
-
------All other animals are Pokemon
-update animals set speciesId = 1 where speciesId is null;
-
----------Modify your inserted animals to include owner information (owner_id)
-
-update animals set ownerId = 1 where name = 'Agumon';
-update animals set ownerId = 2 where name in ('Gabumon','Pikachu');
-update animals set ownerId = 3 where name in ('Devimon','Plantmon');
-update animals set ownerId = 4 where name in ('Charmander','Squirtle','Blossom');
-update animals set ownerId = 5 where name in ('Angemon', 'Boarmon');
