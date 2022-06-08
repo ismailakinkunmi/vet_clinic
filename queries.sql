@@ -34,15 +34,6 @@ rollback to savepoint savepoint1;
 update animals set weight_kg = weight_kg * -1;
 commit
 
-
-
-
-
-
-
-
-
-
 -- Write queries to answer the following questions:
 
 ----How many animals are there?
@@ -65,3 +56,12 @@ select name from animals where escape_attempts = (select max(escape_attempts) fr
 
  ----What is the average number of escape attempts per animal type of those born between 1990 and 2000?
 select species, avg(escape_attempts) from animals where extract(year from date_of_birth) between 1990 and 2000 group by species;
+
+
+----------------Modify your inserted animals so it includes the species_id value:-------------
+
+----If the name ends in "mon" it will be Digimon
+ update animals set speciesId = 2 where name like'%mon';
+
+-----All other animals are Pokemon
+update animals set speciesId = 1 where speciesId is null;
