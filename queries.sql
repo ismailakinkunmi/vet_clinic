@@ -25,6 +25,23 @@ begin;
 delete from animals *;
 rollback;
 
+----Inside a transaction
+begin
+delete from animals * where  date_of_birth > '2022-1-01';
+savepoint savepoint1
+update animals set weight_kg = weight_kg * -1;
+rollback to savepoint savepoint1;
+update animals set weight_kg = weight_kg * -1;
+commit
+
+
+
+
+
+
+
+
+
 
 -- Write queries to answer the following questions:
 
@@ -35,18 +52,16 @@ select * from animals;
 select * from animals where escape_attempts = 0;
 
 ---- What is the average weight of animals?
--15.5500000000000000
+select avg(weight_kg) from animals;
 
 ----Who escapes the most, neutered or not neutered animals?
-Boarmon
+select name from animals where escape_attempts = (select max(escape_attempts) from animals);
 
 ----What is the minimum and maximum weight of each type of animal?
- species | min | max
----------+-----+------
- pokemon | -17 |  -11
- digimon | -45 | -5.7
+ select species, min(weight_kg), max(weight_kg) from animals group by species;
+
+
+
 
  ----What is the average number of escape attempts per animal type of those born between 1990 and 2000?
-  species |        avg
----------+--------------------
- pokemon | 3.0000000000000000
+select species, avg(escape_attempts) from animals where extract(year from date_of_birth) between 1990 and 2000 group by species;

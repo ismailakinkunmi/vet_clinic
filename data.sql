@@ -5,7 +5,6 @@ insert into animals(name, date_of_birth,escape_attempts,neutered,weight_kg) valu
 insert into animals(name, date_of_birth,escape_attempts,neutered,weight_kg) values('Devimon','2017-05-12',5,true,11);
 
 -- query and update animals table
-alter table animals add species varchar;
 insert into animals(name,date_of_birth,escape_attempts,neutered,weight_kg) values('Charmander','2020-2-08',0,false,11);
 insert into animals(name,date_of_birth,escape_attempts,neutered,weight_kg) values('Plantmon','2021-11-15',2,true,5.7);
 insert into animals(name,date_of_birth,escape_attempts,neutered,weight_kg) values('Squirtle','1993-4-02',3,true,12.13);
