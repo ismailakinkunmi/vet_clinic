@@ -14,12 +14,11 @@ alter table animals add species varchar;
 alter table animals drop column species;
 
 ------add awnersId and speciesId as foreign key to animals table
------------ TWO STEPS_____________
-------------- for species
+----------- TWO STEPS : first add column and second add foreign key_____________
+-------------  for species
+
 alter table animals add column speciesId int;
-alter table add foreign key(speciesId) references species(speciesId); 
+alter table animals add foreign key(speciesId) references species(speciesId); 
 ----------------for owners
 alter table animals add column ownerId int;
-alter table add foreign key(ownerId) references owners(ownerId); 
-
-
+alter table animals add foreign key(ownerId) references owners(ownerId); 

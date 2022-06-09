@@ -74,3 +74,11 @@ select full_name, name from owners O full join animals A on O.ownerId = A.ownerI
 select count(*) as Animals, S.name from animals Animals inner join species S on S.speciesId = Animals.speciesId group by S.name;
 
 ----List all Digimon owned by Jennifer Orwell.
+select A.name, O.full_name, S.name FROM animals A FULL JOIN owners O ON A.ownerid = O.ownerId  FULL JOIN species S ON A.Speciesid = S.speciesId WHERE O.full_name = 'Jennifer Orwell' AND S.name = 'Digimon';
+
+
+-------List all animals owned by Dean Winchester that haven't tried to escape.
+select name, escape_attempts, full_name from animals FULL JOIN owners ON animals.ownerId = owners.ownerId WHERE full_name = 'Dean Winchester' AND escape_attempts = 0;
+
+---Who owns the most animals?
+select count(name), full_name from animals join owners on animals.ownerId =owners.ownerId group by full_name order by count desc limit 1;
