@@ -56,3 +56,21 @@ select name from animals where escape_attempts = (select max(escape_attempts) fr
 
  ----What is the average number of escape attempts per animal type of those born between 1990 and 2000?
 select species, avg(escape_attempts) from animals where extract(year from date_of_birth) between 1990 and 2000 group by species;
+
+
+-------------Write queries (using JOIN) to answer the following questions
+
+---What animals belong to Melody Pond?
+select full_name, name from owners O join animals A on O.ownerId = A.ownerId where full_name = 'Melody Pond';
+
+
+------------------List of all animals that are pokemon (their type is Pokemon)
+select S.name, A.name from species S join animals A on S.speciesId = A.speciesId where S.name = 'Pokemon';
+
+----------------List all owners and their animals, remember to include those that don't own any animal.
+select full_name, name from owners O full join animals A on O.ownerId = A.ownerId;
+
+--------How many animals are there per species?
+select count(*) as Animals, S.name from animals Animals inner join species S on S.speciesId = Animals.speciesId group by S.name;
+
+----List all Digimon owned by Jennifer Orwell.
