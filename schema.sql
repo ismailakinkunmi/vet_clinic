@@ -25,3 +25,17 @@ alter table animals add foreign key(ownerId) references owners(ownerId);
 
 -----create table for vets
 create table vets(id int generated always as identity primary key, name varchar(255), age int, date_of_graduation date);
+
+-----create join table named specializations
+create table specializations(id int generated always as identity primary key, species_Id int, vet_id int);
+
+---add foreign keys
+alter table specializations add foreign key(species_id) references species(speciesid);
+alter table specializations add foreign key(vet_id) references vets(id);
+
+
+-----create join table named visits
+create table visits(id int generated always as identity primary key, animal_Id int, vet_id int, visit_date date);
+
+ alter table visits add foreign key(vet_id) references vets(id);
+ alter table visits add foreign key(animal_id) references animals(id);
