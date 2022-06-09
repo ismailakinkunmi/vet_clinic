@@ -50,3 +50,44 @@ insert into specializations(species_id, vet_id) values (1,1);
 insert into specializations(species_id, vet_id) values (2,3);
 insert into specializations(species_id, vet_id) values (1,3);
 insert into specializations(species_id, vet_id) values (2,4);
+
+
+---------------Insert the following data for visits:------
+--Agumon
+insert into visits(animal_id, vet_id, visit_date) values (1,1,'2020-5-24');
+insert into visits(animal_id, vet_id, visit_date) values (1,3,'2020-7-22');
+--Gabumon
+ insert into visits(animal_id, vet_id, visit_date) values (2,4,'2021-2-02');
+
+ ----Pikachu
+ insert into visits(animal_id, vet_id, visit_date) values (3,2,'2020-1-05');
+insert into visits(animal_id, vet_id, visit_date) values (3,2,'2020-3-08');
+insert into visits(animal_id, vet_id, visit_date) values (3,2,'2020-5-14');
+
+--- Devimon
+insert into visits(animal_id, vet_id, visit_date) values (4,3,'2021-5-04')
+
+-----Chamander
+insert into visits(animal_id, vet_id, visit_date) values (5,4,'2021-2-24');
+
+-----plantmon
+insert into visits(animal_id, vet_id, visit_date) values (6,2,'2019-12-21');
+insert into visits(animal_id, vet_id, visit_date) values (6,1,'2020-08-10');
+insert into visits(animal_id, vet_id, visit_date) values (6,2,'2021-04-07');
+
+----squirtle
+ insert into visits(animal_id, vet_id, visit_date) values (7,3,'2019-9-29');
+
+----Angemon
+insert into visits(animal_id, vet_id, visit_date) values (8,4,'2020-10-03');
+insert into visits(animal_id, vet_id, visit_date) values (8,4,'2020-11-04');
+
+---Boarmon
+insert into visits(animal_id, vet_id, visit_date) values (9,2,'2019-1-24');
+insert into visits(animal_id, vet_id, visit_date) values (9,2,'2019-5-15');
+insert into visits(animal_id, vet_id, visit_date) values (9,2,'2020-2-27');
+insert into visits(animal_id, vet_id, visit_date) values (9,2,'2020-8-03');
+
+---blossom
+ insert into visits(animal_id, vet_id, visit_date) values (10,3,'2020-5-24');
+insert into visits(animal_id, vet_id, visit_date) values (10,1,'2021-1-11');
