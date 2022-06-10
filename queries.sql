@@ -124,8 +124,11 @@ select count(*) as count_visits from visits Join vets ON vets.id = visits.vet_id
 
 
 
-SELECT species.name, COUNT(visits.animal_id) FROM visits JOIN vets ON vet.id = visits.vet_id JOIN animals ON visits.animal_id = animal.id 
-JOIN species ON species.id = animal.species_id WHERE vet_id = 2 GROUP BY species.name;
+
+SELECT species.name AS potential_specialty, COUNT(A.species_id) as visits FROM visits
+JOIN animals A On A.id = visits.animal_id JOIN species ON species.id = A.species_id
+JOIN vets ON vets.id = visits.vet WHERE vets.name = 'Maisy Smith' GROUP BY species.name
+ORDER BY COUNT(A.species_id) DESC LIMIT 1;
 
 
 
