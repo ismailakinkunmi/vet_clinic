@@ -39,3 +39,13 @@ create table visits(id int generated always as identity primary key, animal_Id i
 
  alter table visits add foreign key(vet_id) references vets(id);
  alter table visits add foreign key(animal_id) references animals(id);
+
+
+---------------------- database performance
+
+-- Add an email column to your owners table
+ALTER TABLE owners ADD COLUMN email VARCHAR(120);
+
+
+
+ 

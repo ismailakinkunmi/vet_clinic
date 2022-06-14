@@ -91,3 +91,8 @@ insert into visits(animal_id, vet_id, visit_date) values (9,2,'2020-8-03');
 ---blossom
  insert into visits(animal_id, vet_id, visit_date) values (10,3,'2020-5-24');
 insert into visits(animal_id, vet_id, visit_date) values (10,1,'2021-1-11');
+
+-- database performance
+
+INSERT INTO visits (animal_id, vet_id, visit_date) SELECT * FROM (SELECT id FROM animals) animal_id, (SELECT id FROM vets) vets_ids, generate_series('1980-01-01'::timestamp, '2021-01-01', '4 hours') visit_timestamp;
+insert into owners (full_name, email) select 'Owner ' || generate_series(1,2500000), 'owner_' || generate_series(1,2500000) || '@mail.com';
