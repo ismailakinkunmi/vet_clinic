@@ -1,4 +1,4 @@
-# database-project
+# vet_clinic
 
 covering postgre structural query language syllabus.
 
