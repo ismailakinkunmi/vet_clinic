@@ -47,5 +47,11 @@ create table visits(id int generated always as identity primary key, animal_Id i
 ALTER TABLE owners ADD COLUMN email VARCHAR(120);
 
 
+-- Create index for animal_id column in visits table
+create index animal_visits on visits(animal_id);
+-- Create index for vet_id column in visits table
+create index vets_visits on visits(vet_id);
+-- create index for email column in owners table
+create index owners_email on owners(email);
 
  
